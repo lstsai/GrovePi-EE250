@@ -42,4 +42,4 @@ if __name__ == '__main__':
         	close= "OBJ PRES"
         else: 
         	close= "        "
-        setText_norefresh("{}cm {}".format(curr, close)+"\n"+"{}cm".format(thresh))
+        setText_norefresh("{:3d}cm {}".format(curr, close)+"\n"+"{:3d}cm".format(thresh))
