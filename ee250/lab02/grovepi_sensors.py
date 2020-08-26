@@ -37,5 +37,9 @@ if __name__ == '__main__':
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
         curr= grovepi.ultrasonicRead(PORT)
-        thresh= grovepi.analogRead(rotary)
-        setText_norefresh("{}cm".format(curr)+"\n"+"{}cm".format(thresh))
+        thresh= grovepi.analogRead(rotary)//2
+        if thresh>curr:
+        	output= "{}cm".format(curr)+"\n"+"{}cm".format(thresh)
+        else: 
+        	output= "{}cm".format(curr)+" OBJ PRES\n"+"{}cm".format(thresh)
+        setText_norefresh(output)
