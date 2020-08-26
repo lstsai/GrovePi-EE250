@@ -36,4 +36,5 @@ if __name__ == '__main__':
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
 
-        print grovepi.ultrasonicRead(PORT)
+        print "error"
+        print(grovepi.ultrasonicRead(PORT))
