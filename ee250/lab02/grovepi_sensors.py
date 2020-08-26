@@ -39,7 +39,7 @@ if __name__ == '__main__':
         curr= grovepi.ultrasonicRead(PORT)
         thresh= grovepi.analogRead(rotary)//2
         if thresh>curr:
-        	output= "{}cm".format(curr)+"\n"+"{}cm".format(thresh)
+        	close= "OBJ PRES"
         else: 
-        	output= "{}cm".format(curr)+" OBJ PRES\n"+"{}cm".format(thresh)
-        setText_norefresh(output)
+        	close= "        "
+        setText_norefresh("{}cm {}".format(curr, close)+" OBJ PRES\n"+"{}cm".format(thresh))
