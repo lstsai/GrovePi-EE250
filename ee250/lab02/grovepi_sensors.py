@@ -37,11 +37,11 @@ if __name__ == '__main__':
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
         curr= grovepi.ultrasonicRead(PORT)
-        thresh= grovepi.analogRead(rotary)//2
+        thresh= grovepi.analogRead(rotary)//(1024/517)
         if thresh>curr:
         	close= "OBJ PRES"
-        	setRGB(255,0,0)
+        	setRGB(150,0,0)
         else: 
         	close= "        "
-        	setRGB(0,255,0)
-        setText_norefresh("{:3d}cm {}".format(curr, close)+"\n"+"{:3d}cm".format(thresh))
+        	setRGB(0,150,0)
+        setText_norefresh("{:3d}cm {}".format(thresh, close)+"\n"+"{:3d}cm".format(curr))
