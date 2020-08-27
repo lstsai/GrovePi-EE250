@@ -40,6 +40,8 @@ if __name__ == '__main__':
         thresh= grovepi.analogRead(rotary)//2
         if thresh>curr:
         	close= "OBJ PRES"
+        	setRGB(255,0,0)
         else: 
         	close= "        "
+        	setRGB(0,255,0)
         setText_norefresh("{:3d}cm {}".format(curr, close)+"\n"+"{:3d}cm".format(thresh))
