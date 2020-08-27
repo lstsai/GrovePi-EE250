@@ -24,6 +24,7 @@ sys.path.append('../../Software/Python/grove_rgb_lcd')
 
 import grovepi
 from grove_rgb_lcd import *
+import math
 
 """This if-statement checks if you are running this python file directly. That 
 is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will 
@@ -37,7 +38,7 @@ if __name__ == '__main__':
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
         curr= grovepi.ultrasonicRead(PORT)
-        thresh= grovepi.analogRead(rotary)//(1024/517)
+        thresh= math.floor((grovepi.analogRead(rotary)*517)/1023)
         if thresh>curr:
         	close= "OBJ PRES"
         	setRGB(150,0,0)
